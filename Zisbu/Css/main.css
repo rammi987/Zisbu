@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* UTILS */
+body {
+    background-color: rgb(255, 230, 230);
+    color: rgb(0, 95, 80);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 15px;
+}
+
+.col {
+    flex: 1 0 0%;
+    max-width: 100%;
+    width: 100%;
+}
+
+.mra { margin-right: auto }
+.mr5 { margin-right: 5px }
+.mr10 { margin-right: 10px }
+.mr20 { margin-right: 20px }
+.mr25 { margin-right: 25px }
+.mr30 { margin-right: 30px }
+
+.mla { margin-left: auto }
+.ml5 { margin-left: 5px }
+.ml10 { margin-left: 10px }
+.ml20 { margin-left: 20px }
+.ml25 { margin-left: 25px }
+.ml30 { margin-left: 30px }
+
+.btn {
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color:rgb(0, 95, 80);
+}
+
+.btn--empty {
+    border: none;
+    background: transparent;
+}
+
+/* ANNUCNMENT */
+.announcement-bar {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 95, 80, .1);
+    font-weight: 300;
+    font-size: .75rem;
+    text-align: center;
+}
+
+.announcement-bar p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcement-bar svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+
+header {
+    position: relative;
+    margin: 10px 0;
+}
+
+header .row {
+    align-items: center;
+}
+
+.header__menu {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 170px;
+    bottom: 0;
+    margin: 50px 0;
+    height: calc(100vh - 310px);
+    overflow: hidden;
+}
+
+.menu__level-2,
+.menu__level-3 {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(100%);
+}
+
+.menu__level .menu__action {
+    display: flex;
+}
+
+.menu__level .menu__action a {
+    flex-grow: 1;
+}
+
+.menu__level li {
+    border-top: rgba(0, 95, 80, .1) 1px solid;
+}
+
+.menu__level li:last-child {
+    border-bottom: rgba(0, 95, 80, .1) 1px solid;
+}
+
+.menu__level a {
+    display: block;
+    padding: 10px 20px;
+    color: rgb(0, 95, 80);
+    text-decoration: none;
+}
+
+.menu__forward {
+    padding: 10px 20px 11px;
+    border-left: 1px solid rgba(0, 95, 80, .1);
+}
+
+.menu__level-3 { transform: translateX(200%) }
+
+.header__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header__burger svg {
+    width: 26px;
+    height: 20px;
+    stroke: currentColor;
+}
+.header__burger svg  line {
+    transform: rotate(0deg) translateY(0) translateX(0);
+    transform-origin: 50% 50%;
+    transition: all .5s cubic-bezier(.42,0,.14,1.01);
+}
+.--active .header__burger svg line {
+    position: relative;
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+.--active .header__burger svg line:first-child {
+    transform: rotate(45deg) translateY(10px) translateX(1px);
+}
+.--active .header__burger svg line:last-child {
+    overflow: hidden;
+    opacity: 0;
+    transform: rotate(45deg) translateY(-7px) translateX(1px);
+}
